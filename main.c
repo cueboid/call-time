@@ -55,6 +55,7 @@ int main()
 {
 	signal(SIGINT, handle_sigint);
 	disable_input_echo();
+	write(STDOUT_FILENO, "\033[?25l", 6);
 	while (keep_running) {
 		time_t now = time(NULL);
 		time_t difference = now - CALL_START_TIMESTAMP;
@@ -77,6 +78,7 @@ int main()
 		fflush(stdout);
 		sleep(1);
 	}
+	write(STDOUT_FILENO, "\033[?25h", 6);
 	restore_input_echo();
 	return 0;
 }
