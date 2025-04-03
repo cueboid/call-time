@@ -28,22 +28,18 @@
 
 volatile sig_atomic_t keep_running = 1;
 
-void disable_input_echo()
+void set_input_echo(int enable)
 {
 	struct termios t;
 	tcgetattr(STDIN_FILENO, &t);
-	t.c_lflag &= ~(ICANON | ECHO);
+
+	if (enable)
+		t.c_lflag |= (ICANON | ECHO);
+	else
+		t.c_lflag &= ~(ICANON | ECHO);
+
 	tcsetattr(STDIN_FILENO, TCSANOW, &t);
 }
-
-void restore_input_echo()
-{
-	struct termios t;
-	tcgetattr(STDIN_FILENO, &t);
-	t.c_lflag |= (ICANON | ECHO);
-	tcsetattr(STDIN_FILENO, TCSANOW, &t);
-}
-
 
 void handle_sigint(int sig)
 {
@@ -54,7 +50,7 @@ void handle_sigint(int sig)
 int main()
 {
 	signal(SIGINT, handle_sigint);
-	disable_input_echo();
+	set_input_echo(0);
 	write(STDOUT_FILENO, "\033[?25l", 6);
 	while (keep_running) {
 		time_t now = time(NULL);
@@ -79,6 +75,6 @@ int main()
 		sleep(1);
 	}
 	write(STDOUT_FILENO, "\033[?25h", 6);
-	restore_input_echo();
+	set_input_echo(1);
 	return 0;
 }
