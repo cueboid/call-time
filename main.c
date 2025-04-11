@@ -24,7 +24,7 @@
 #include <unistd.h>
 #include <stdint.h>
 
-#define CALL_START_TIMESTAMP 1710524911
+#define CALL_START_TIMESTAMP 1744316124
 
 volatile sig_atomic_t keep_running = 1;
 
