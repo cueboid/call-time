@@ -68,8 +68,12 @@ int main()
 		long long minutes = (diff % 3600) / 60;
 		long long seconds = diff % 60;
 
-		printf("\rsince call start: %lld years, %lld days, %lld hours, %lld minutes, %lld seconds | total hours: %lld hours | total days: %lld days",
-		       years, days, hours, minutes, seconds, total_hours, total_days);
+		printf("\rsince call start: %lld years, %lld days, %lld hours, "
+		"%lld minutes, %lld seconds | "
+		"total hours: %lld hours | "
+		"total days: %lld days",
+		years, days, hours, minutes, seconds,
+		total_hours, total_days);
 
 		fflush(stdout);
 		sleep(1);
