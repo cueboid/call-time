@@ -47,7 +47,7 @@ void handle_sigint(int sig)
 	write(STDOUT_FILENO, "\n", 1);
 }
 
-int main()
+int main(void)
 {
 	signal(SIGINT, handle_sigint);
 	set_input_echo(0);
