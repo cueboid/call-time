@@ -2,7 +2,7 @@ jeffy & johnny call timer
 
 this (bad) program literally just shows the amount of time since the unix timestamp "1744316124".
 this time is when a voice call in the jeffy & johnny groupchat on discord started.
-as of april 11th 14:50 UTC, the call is ongoing and is currently at 18 hours.
+as of may 19th 9:51 UTC, the call is ongoing and is currently at 38 days, 13 hours.
 this program dosen't actually check if the call is still ongoing, so i'll update the README if it ends.
 
 our previous call lasted over 1 year, and we almost hit 10,000 hours. however, it ended on thursday, april 10th, 2025 :(
