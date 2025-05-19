@@ -68,7 +68,8 @@ int main(void)
 		long long minutes = (diff % 3600) / 60;
 		long long seconds = diff % 60;
 
-		printf("\rsince call start: %lld years, %lld days, %lld hours, "
+		printf("\r\033[K");
+		printf("since call start: %lld years, %lld days, %lld hours, "
 		"%lld minutes, %lld seconds | "
 		"total hours: %lld hours | "
 		"total days: %lld days",
