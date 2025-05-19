@@ -21,7 +21,6 @@
 #include <unistd.h>
 #include <termios.h>
 #include <signal.h>
-#include <unistd.h>
 #include <stdint.h>
 
 #define CALL_START_TIMESTAMP 1744316124
