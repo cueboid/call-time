@@ -70,11 +70,11 @@ int main(void)
 
 		printf("\r\033[K");
 		printf("since call start: %lld years, %lld days, %lld hours, "
-		"%lld minutes, %lld seconds | "
-		"total hours: %lld hours | "
-		"total days: %lld days",
-		years, days, hours, minutes, seconds,
-		total_hours, total_days);
+		       "%lld minutes, %lld seconds | "
+		       "total hours: %lld hours | "
+		       "total days: %lld days",
+		       years, days, hours, minutes, seconds,
+		       total_hours, total_days);
 
 		fflush(stdout);
 		sleep(1);
