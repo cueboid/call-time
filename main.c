@@ -42,6 +42,7 @@ void set_input_echo(int enable)
 
 void handle_sigint(int sig)
 {
+	(void)sig;
 	keep_running = 0;
 	write(STDOUT_FILENO, "\n", 1);
 }
