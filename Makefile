@@ -1,5 +1,5 @@
 CC      = gcc
-CFLAGS  = -Wall -g
+CFLAGS  = -Wall -g -Wextra
 TARGET  = call-time
 SRC     = main.c
 OBJ     = main.o
